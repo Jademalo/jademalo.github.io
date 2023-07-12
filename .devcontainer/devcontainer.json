@@ -1,0 +1,14 @@
+{
+	"name": "Debian NGINX",
+
+	// Build the container from the included Dockerfile
+    "build": {
+        "dockerfile": "Dockerfile"
+    }
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	//"forwardPorts": ["80:8080"]
+
+	// Make sure our nginx container's default command runs, which starts up the web server in the background.
+	//"overrideCommand": false
+}
