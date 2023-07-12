@@ -4,7 +4,10 @@
 	// Build the container from the included Dockerfile
     "build": {
         "dockerfile": "Dockerfile"
-    }
+    },
+
+	// Start NGINX when connecting to the container
+	"postStartCommand": "nginx"
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	//"forwardPorts": ["80:8080"]

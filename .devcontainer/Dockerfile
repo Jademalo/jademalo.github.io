@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/devcontainers/base:bullseye
+FROM nginx:stable
 
-# Install nginx
-RUN apt-get update && apt-get install -y nginx
+# Install git
+RUN apt-get update && apt-get install -y git
 
-# Host source with nginx
-RUN rm -rf /var/www/html
-RUN ln -s /workspaces/jademalo.github.io /var/www/html
+# Link workspace source to nginx
+RUN rm -rf /usr/share/nginx/html && \
+    ln -s /workspaces/jademalo.github.io /usr/share/nginx/html
