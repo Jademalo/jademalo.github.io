@@ -5,13 +5,13 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
+	
+	// Point the default nginx html directory at the workspace
+	"postCreateCommand": "rm -rf /usr/share/nginx/html && ln -s ${containerWorkspaceFolder} /usr/share/nginx/html",
 
-	// Start NGINX when connecting to the container
-	"postStartCommand": "nginx"
+	// Forward the port for nginx inside the container to the local machine
+	"forwardPorts": [80],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	//"forwardPorts": ["80:8080"]
-
-	// Make sure our nginx container's default command runs, which starts up the web server in the background.
-	//"overrideCommand": false
+	// Run the standard docker-entrypoint.sh included with the container
+	"overrideCommand": false
 }
