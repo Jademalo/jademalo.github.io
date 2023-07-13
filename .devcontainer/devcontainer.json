@@ -1,11 +1,9 @@
 {
 	"name": "Debian NGINX",
+	"image": "nginx:stable",
 
-	// Build the container from the included Dockerfile
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-	
+	// Install git in the container when it's first created
+	"onCreateCommand": "apt-get update && apt-get install -y git",
 	// Point the default nginx html directory at the workspace
 	"postCreateCommand": "rm -rf /usr/share/nginx/html && ln -s ${containerWorkspaceFolder} /usr/share/nginx/html",
 
@@ -13,5 +11,15 @@
 	"forwardPorts": [80],
 
 	// Run the standard docker-entrypoint.sh included with the container
-	"overrideCommand": false
+	"overrideCommand": false,
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"actboy168.tasks",
+        		"exelord.git-commits",
+        		"donjayamanne.githistory"
+			]
+		}
+	}
 }
