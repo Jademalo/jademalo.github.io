@@ -1,0 +1,62 @@
+html {
+    text-align: center;
+    color: #869AAF;
+    text-shadow: 1px 1px #03142C;
+    background-color: #03142C;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* This has a margin of 8px by default, so children don't fill the whole screen space*/
+body {
+    margin: 0;
+}
+
+#bgold {
+    /*background-image: url("https://images4.alphacoders.com/243/243554.png");*/
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -9000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #03142C;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -9000;
+    background-image: url("../images/243554.png");
+    background-position-x: center;
+    background-position-y: top 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bg2 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -8000;
+    background-image: linear-gradient(to bottom, transparent, #ffffffaa);
+}
+
+.main-header {
+    overflow: auto;
+    color: #869AAF;
+    text-shadow: 1px 1px #03142C;
+}
+
+.main-content {
+    box-sizing: border-box;
+    width: 100%;
+}
