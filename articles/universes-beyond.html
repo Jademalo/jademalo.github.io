@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jademalo's Info - Magic Universes Beyond, and the Issues of Flavour Cohesion</title>
+        <link rel="stylesheet" href="markdown.css"/>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+
+        <div id="bg">
+            <div id="article"></div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+            fetch( 'universes-beyond.md' )
+                .then( response => response.text() )
+                .then( (result) => {
+                    var content = marked.parse(result);
+                    document.querySelector( '#article' ).innerHTML = content;
+                });
+        </script>
+
+    </body>
+</html>
